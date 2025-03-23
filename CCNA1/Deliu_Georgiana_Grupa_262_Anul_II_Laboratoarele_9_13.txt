@@ -1,0 +1,483 @@
+-- LABORATORUL 9 --
+
+-->Exercițiul 9.1
+
+Partea I:
+
+Pasul 7:
+b. Multiplexarea conversației.
+   Culorile diferite reprezintă diferite protocoale.
+
+Partea II:
+
+Pasul 1:
+d. Deoarece TCP trebuie să stabilească mai întâi conexiunea, pentru ca traficul HTTP să poată începe.
+e. TCP.
+   Da, se folosește TCP.
+   1029, 90, 1, 1.
+f. ACK și PSH.
+h. Porturile sursă și destinație sunt inversate, iar numărul de confirmare este 1. Flag-urile s-au schimbat la SYN+ACK.
+i. Porturile sursă și destinație sunt inversate, numărul de secvență este 1 pentru ambele, numărul de confirmare  este 103, iar flag-urile sunt PSH și ACK.
+
+Pasul 2:
+c. Da.
+d. 1025, 21, 0, 0, SYN.
+f. 21, 1025, 0, 1. SYN+ACK. Portul sursei și destinației au fost interschimbate, iar numărul de secvență este 1.
+i. ”Welcome to PT Ftp server”.
+
+Pasul 3:
+d. UDP. 
+   Nu.
+e. 1025 și 53. Deoarece UDP nu trebuie să stabilească o conexiune de bază.
+g. 53 și 1025. Portul dintre sursă și destinație au fost interschimbate.
+   DNS ANSWER. 192.168.1.254.
+
+Pasul 4:
+d. TCP.
+   Da.
+e. 1025, 25, 0, 0. SYN
+g. 25, 1025, 0, 1. SYN+ACK. Portul dintre sursă și destinație a fost interschimbat, ambele numere de secvențe sunt 1.
+h. 1025, 25, 1, 1. ACK. Portul dintre sursă și destinație a fost interschimbat, ambele numere de secvențe sunt 1.
+i. 1025, 25, 1, 1. PSH+ACK. Portul dintre sursă și destinație a fost interschimbat, ambele numere de secvențe sunt 1.
+   SMTP. POP3.
+
+
+
+--LABORATORUL 10--
+
+-->Exercițiul 10.2
+
+Partea I:
+
+Pasul 2:
+f. DNS - Domain Name Server
+
+
+-->Exercițiul 10.4
+
+Partea I:
+
+Pasul 1:
+b. 
+-----------------------------------------------------------------------------
+| Destination                 | Average Round Trip Time (ms) | TTL / Hop Limit |
+-----------------------------------------------------------------------------
+| 192.168.1.10                | <1                            | 128             |
+| 2001:db8:acad:1::10         | <1                            | 128             |
+| 192.168.1.1 (R1)            | <1                            | 255             |
+| 2001:db8:acad:1::1 (R1)     | 1                             | 64              |
+| 192.168.1.2 (S1)            | 1                             | 255             |
+| 2001:db8:acad:1::2 (S1)     | 1                             | 64              |
+| 64.100.0.2 (R1)             | 1                             | 255             |
+| 2001:db8:acad::2 (R1)       | <1                            | 64              |
+| 64.100.0.1 (ISP)            | <1                            | 254             |
+| 2001:db8:acad::1 (ISP)      | 1                             | 63              |
+| 209.165.200.225 (ISP G0/0/1)| Unreachable                   | Unreachable     |
+| 2001:db8:acad:200::225 (ISP G0/0/1)| Unreachable            | Unreachable     |
+| 209.165.200.226 (External)  | Unreachable                   | Unreachable     |
+| 2001:db8:acad:200::226 (External)| Unreachable              | Unreachable     |
+---------------------------------------------------------------------------------
+
+Pasul 2:
+	Ping-urile către interfața ISP G0/0/0 au fost reușite. Ping-urile către interfața ISP G0/0/1 și NIC-ul extern nu au fost reușite.
+
+Partea IV:
+
+Pasul 1:
+g. Destinația rețelei inaccesibilă, solicitarea a expirat.
+
+Pasul 2:
+b. 209.165.200.226.
+
+Întrebări de reflecție:
+1. Firewall pe PC-uri, comenzi de access-list, probleme de rutare, interfața este dezactivată, întârziere în rețea.
+2. Solicitarea a expirat. Acest lucru înseamnă că nu a existat niciun răspuns în perioada de timp implicită. Unele dintre elementele pe care le puteți verifica: router-ul este oprit, gazda de destinație este oprită, ruta de întoarcere către dispozitivul dumneavoastră și latența răspunsului nu depășește perioada de timp implicită.
+3. Gazda de destinație inaccesibilă. Acest mesaj indică faptul că nu există o rută către destinație, deoarece rețeaua nu este listată în tabelul de rutare.
+
+
+-->Exercițiul 10.5
+
+Partea I:
+
+Pasul 2:
+a. 10.10.1.97
+c. 10.10.1.17
+f. 10.10.1.6
+g. 10.10.1.6/32 
+   10.10.1.4/30
+h. 10.10.1.10/28
+   10.10.1.8/30
+   10.10.1.10/32
+j. 10.10.1.2
+   10.10.1.9
+
+Pasul 3:
+a. Interfața Serial 0/0/0 a lui R2 este configurată cu o adresă IP incorectă.
+b. Configurați adresa IP corectă pe interfața Serial 0/0/0 a lui R2.
+
+Pasul 5:
+b. Da.
+
+Partea II:
+
+Pasul 2:
+a. 2001:db8:1:3::2.
+c. Adresa IPv6 nu a fost accesată.
+f. Da.
+
+Pasul 3:
+a. PC4 folosește o configurație default gateway greșită.
+b. Configurați PC4 cu adresa corectă a gateway-ului implicit: FE80::3.
+
+Pasul 5:
+b. Da.
+
+
+--LABORATORUL 11--
+
+-->Exercițiul 11.3
+
+----------------------------------------------------------------------------------------------------------------------
+| Device        | Interface    | IPv4 Address     | Subnet Mask       | IPv6 Address/Prefix    | Default Gateway    |
+---------------------------------------------------------------------------------------------------------------------
+| R1            | G0/0         | 172.16.10.1      | 255.255.255.192   | 2001:DB8:CAFE:1::1/64  | N/A                |
+| R1            | G0/1         | 172.16.10.65     | 255.255.255.192   | 2001:DB8:CAFE:2::1/64  | N/A                |
+| S1            | VLAN1        | 172.16.10.62     | 255.255.255.192   | N/A                    | 172.16.10.1        |
+| S2            | VLAN1        | 172.16.10.126    | 255.255.255.192   | N/A                    | 172.16.10.65       |
+| ManagerA      | NIC          | 172.16.10.3      | 255.255.255.192   | 2001:DB8:CAFE:1::3/64  | 172.16.10.1        |
+| Accounting.pka| NIC          | 172.16.10.2      | 255.255.255.192   | 2001:DB8:CAFE:1::2/64  | 172.16.10.1        |
+| ManagerB      | NIC          | 172.16.10.67     | 255.255.255.192   | 2001:DB8:CAFE:2::3/64  | 172.16.10.65       |
+| Website.pka   | NIC          | 172.16.10.66     | 255.255.255.192   | 2001:DB8:CAFE:2::2/64  | 172.16.10.65       |
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+-->Exercițiul 11.4
+
+--------------------------------------------------------------------------------------------------------------------
+| Device     | Interface | IPv4 Address      | Subnet Mask       | IPv6 Address/Prefix        | Default Gateway    |
+--------------------------------------------------------------------------------------------------------------------
+| Branch-A   | G0/0      | 172.20.16.1       | 255.255.254.0     | N/A                        | N/A                |
+| Branch-A   | G0/1      | 172.20.18.1       | 255.255.255.0     | N/A                        | N/A                |
+| Branch-A   | G0/2      | 172.20.31.254     | 255.255.255.252   | N/A                        | N/A                |
+| Branch-B   | G0/0      | N/A               | N/A               | 2001:DB8:FADE:0FF::1/64    | N/A                |
+| Branch-B   | G0/1      | N/A               | N/A               | 2001:DB8:FADE:0100::1/64   | N/A                |
+| Branch-B   | G0/2      | N/A               | N/A               | 2001:DB8:FFFF:FFFF::2/64   | N/A                |
+| PC-A1      | NIC       | 172.20.17.254     | 255.255.254.0     | N/A                        | 172.20.16.1        |
+| PC-A2      | NIC       | 172.20.18.254     | 255.255.255.0     | N/A                        | 172.20.18.1        |
+| PC-B1      | NIC       | N/A               | N/A               | 2001:DB8:FADE:0FF::10/64   | FE80::B            |
+| PC-B2      | NIC       | N/A               | N/A               | 2001:DB8:FADE:0100::10/64  | FE80::B            |
+--------------------------------------------------------------------------------------------------------------------
+
+
+-->Exercițiul 11.5
+
+Device   | Interface   | IP Address / Prefix         | Default Gateway
+----------------------------------------------------------------------
+R1       | G0/0        | 192.168.0.1 / 25           | N/A
+         |             | 2001:db8:acad::1/64        | fe80::1
+----------------------------------------------------------------------
+R1       | G0/1        | 192.168.0.129 / 26         | N/A
+         |             | 2001:db8:acad:1::1/64      | fe80::1
+----------------------------------------------------------------------
+R1       | G0/2        | 192.168.0.193 / 27         | N/A
+         |             | 2001:db8:acad:2::1/64      | fe80::1
+----------------------------------------------------------------------
+R1       | S0/0/1      | 172.16.1.2 / 30            | N/A
+         |             | 2001:db8:2::1/64           | fe80::1
+----------------------------------------------------------------------
+Central  | S0/0/0      | 209.165.200.226 / 30       | N/A
+         |             | 2001:db8:1::1/64           | fe80::2
+----------------------------------------------------------------------
+Central  | S0/0/1      | 172.16.1.1 / 30            | N/A
+         |             | 2001:db8:2::2/64           | fe80::2
+----------------------------------------------------------------------
+S1       | VLAN 1      | 192.168.0.2 / 25           | 192.168.0.1
+----------------------------------------------------------------------
+S2       | VLAN 1      | 192.168.0.130 / 26         | 192.168.0.129
+----------------------------------------------------------------------
+S3       | VLAN 1      | 192.168.0.194 / 27         | 192.168.0.193
+----------------------------------------------------------------------
+Staff    | NIC         | 192.168.0.3 / 25           | 192.168.0.1
+         |             | 2001:db8:acad::2/64        | fe80::1
+         |             |                            | fe80::2
+----------------------------------------------------------------------
+Sales    | NIC         | 192.168.0.131 / 26         | 192.168.0.129
+         |             | 2001:db8:acad:1::2/64      | fe80::1
+         |             |                            | fe80::2
+----------------------------------------------------------------------
+IT       | NIC         | 192.168.0.195 / 27         | 192.168.0.193
+         |             | 2001:db8:acad:2::2/64      | fe80::1
+         |             |                            | fe80::2
+----------------------------------------------------------------------
+Web      | NIC         | 64.100.0.3 / 29            | 64.100.0.1
+         |             | 2001:db8:coffee::3/64      | fe80::1
+         |             |                            | fe80::2
+
+
+
+--> Exercițiul 11.6
+
+Întrebări de gândire:
+1. Cel mai greu a fost să mă gândesc la rețeaua pe care vreau să o fac.
+2. Documentația este extraordinar de importantă pentru a gestiona rețeaua. Fără ea, administratorii de rețea fac topologii, verifică adresarea fizică. 
+
+
+--LABORATORUL 12--
+
+-->Exercițiul 12.4.
+
+Partea II:
+b. Configurația stocată pe serverul TFTP a fost încărcată în router.
+c. Nu, interfața Gi0/1 este dezactivată manual de un administrator. Toate interfețele router-ului sunt dezactivate  în mod implicit.
+
+--LABORATORUL 13--
+
+-->Exercițiul 13.1
+Partea I:
+
+Device   | Interface | IP Address    | Subnet Mask     | Default Gateway
+---------|-----------|---------------|-----------------|-----------------
+R1       | G0/0      | 192.168.10.1  | 255.255.255.0   | N/A
+R1       | G0/1      | 192.168.11.1  | 255.255.255.0   | N/A
+S1       | VLAN 1    | 192.168.10.2  | 255.255.255.0   | 192.168.10.1
+S2       | VLAN 1    | 192.168.11.2  | 255.255.255.0   | 192.168.11.1
+PC1      | NIC       | 192.168.10.10 | 255.255.255.0   | 192.168.10.1
+PC2      | NIC       | 192.168.10.11 | 255.255.255.0   | 192.168.10.1
+PC3      | NIC       | 192.168.11.10 | 255.255.255.0   | 192.168.11.1
+PC4      | NIC       | 192.168.11.11 | 255.255.255.0   | 192.168.11.1
+
+
+b.
+Test           | Successful? | Issues                           | Solution                         
+---------------|-------------|-----------------------------------|---------------------------------
+PC1 to PC2     | Nu          | IP address on PC1               | Change PC1 IP address             
+PC1 to S1      | Nu          | S1 missing default gateway      | Configure default gateway on S1   
+PC1 to R1      | Da          | None                            | None                             
+S2 to Devices  | Nu          | S2 missing IP address           | Assign IP address to S2           
+Remote to PC4  | Nu          | PC4 has wrong default gateway   | Correct default gateway on PC4    
+Remote to S1   | Nu          | S1 missing default gateway      | Configure default gateway on S1   
+
+
+-->Exercițiul 13.2
+
+Partea I:
+Pasul 1:
+b.
+Device   | Interface  | IPv4 Address   | Subnet Mask        | Default Gateway   | IPv6 Address/Prefix    | Link-local
+---------|------------|----------------|--------------------|-------------------|------------------------|------------
+R1       | G0/0       | N/A            | N/A                | N/A               | 2001:DB8:1:1::1/64     | FE80::1
+R1       | G0/1       | 10.10.1.97     | 255.255.255.224    | N/A               | N/A                    | N/A
+R1       | S0/0/1     | 10.10.1.6      | 255.255.255.252    | N/A               | 2001:DB8:1:2::2/64     | FE80::1
+R2       | S0/0/0     | 10.10.1.5      | 255.255.255.252    | N/A               | 2001:DB8:1:2::1/64     | FE80::2
+R2       | S0/0/1     | 10.10.1.9      | 255.255.255.252    | N/A               | 2001:DB8:1:3::1/64     | FE80::2
+R3       | G0/0       | N/A            | N/A                | N/A               | 2001:DB8:1:4::1/64     | FE80::3
+R3       | G0/1       | 10.10.1.17     | 255.255.255.240    | N/A               | N/A                    | N/A
+R3       | S0/0/1     | 10.10.1.10     | 255.255.255.252    | N/A               | 2001:DB8:1:3::2/64     | FE80::3
+PC1      | NIC        | 10.10.1.98     | 255.255.255.224    | 10.10.1.97        | N/A                    | N/A
+PC2      | NIC        | N/A            | N/A                | N/A               | 2001:DB8:1:1::2/64     | FE80::1
+PC3      | NIC        | 10.10.1.18     | 255.255.255.240    | 10.10.1.17        | N/A                    | N/A
+PC4      | NIC        | N/A            | N/A                | N/A               | 2001:DB8:1:4::2/64     | FE80::1
+
+Pasul 2:
+a. 10.10.1.97
+c. 10.10.1.17
+f. 10.10.1.6
+g. 10.10.1.6/32
+   10.10.1.4/30
+h. 10.10.1.10
+   10.10.1.8/30
+   10.10.1.10/32.
+
+Pasul 3:
+a. Interfața serială a R2 este configurata ci o adresă greșită de IP.
+b. Sa configuram corect adresa Ip a interfeței seriale 0/0/0 a router-ului R2.
+
+Partea II:
+
+Pasul 2:
+a. 2001:DB8:1:3::2
+b. Nicio adresa IPv6 nu a fost gasita.
+d. Da
+
+Pasul 3:
+a. PC4 folosește un default gateway greșit.
+b. Să configurăm PC4 cu adresa corectă, care este FE80::3.
+
+Pasul 5
+b. Da
+
+
+-->Exercițiul 13.3
+Partea I:
+
+Pasul 1:
+Adresa de destinație nu este disponibilă.
+
+Pasul 2:
+b. 10.0.0.254, adresa gateway a PC ului.
+c. 10.100.100.6
+
+Pasul 3:
+a. RouterB și RouterC
+b. Apar activi.
+d. Se schimbă adresa Ip pe S0/0/0 cu 10.100.100.9/30
+
+Partea II:
+b. Da
+c. Router-ul are cu o adresă IP mai puțin, oentru că o sa folosească RouterB ca dispozitiv de legătură pe traseu.
+
+Partea III:
+Valoarea default a fost 3, noua este 5.
+5
+Parametrul timeout informează comanda traceroute cât timp ar trebui să aștepte un răspuns înainte de a declara saltul ca fiind inaccesibilă, valoarea implicită fiind de 3 secunde.
+Dacă traseul este prea aglomerat, dar încă funcțional, poate fi util să modifici valoarea parametrului timeout pentru a te asigura că traceroute așteaptă suficient de mult înainte de a declara hop-ul inaccesibil.
+
+
+
+-->Exercițiul 13.4
+
+Partea I:
+
+Pasul 6:
+Adresa de IPv4 a DNS-ului pentru PC1 este greșită. Varianta corectă este 64.100.1.254
+
+Partea II:
+
+Pasul 3:
+Serverul DualStackServer.pka a adresei gateway IPv6 este greșită. Răspunsul corect este FE80::A.
+
+Partea III:
+
+Pasul 3:
+Adresa IPv4 a gateway-ului pentru PC2 este greșită. Cea corectă este 192.168.0.1.
+
+
+-->Exercițiul 13.4
+Partea I:
+
+Pasul 1:
+a. Adresa IP este incorectă pentru PC-01, varianta bună este 172.16.1.3.
+b. Da
+   Da
+   Da
+   Nu
+   Nu
+c. Da
+   Da
+d. Adresa IP nu este corect configurată pentru PC-01. Adresa trebuie schimbată cu 172.16.1.3.
+
+Pasul 2:
+a. Adresa Default Gateway este greșită. Cea corectă este 172.16.1.1.
+b. Da
+   Da
+   Da
+   Nu
+   Nu
+c. Da
+   Da
+d. Pc-02 poate sa se conecteze la server-ul web după ce a fost corectată adresa de default gateway. 
+
+Pasul 3:
+b. Nu
+   Nu
+   Da
+   Nu
+   Nu
+c. Nu
+   Nu
+d. PC-A poate să acceseze LAN. Adresa de interfață a g0/1 a router-ului nu a fost configurată corect. Trebuie să accesăm router-ul R1, folosind SSH de pe PC-01 ca să schimbăm adresa IP în 172.16.2.1.
+
+Pasul 4:
+b. Da
+   Da
+   Da
+   Da
+   Da
+c. Nu 
+   Da
+d. PC-B poate accesa serverul web folosind doar adresa IP.Pentru a rezolva această problemă, adresa serverului DNS poate fi configurată să folosească 209.165.200.3. Problema cu serverul DNS-2 trebuie escaladată deoarece nu există acces administrativ la dispozitivlee din afara rețelei.
+e. Nu, deoarece DNS2 are probleme de configurare.
+
+-->Exercițiul 13.5
+Partea I:
+Pasul 2:
+1. Adresa Default gateway nu a fost setata pe PC.
+   La S1 Interfata f0/5 e setata la half duplex, viteza e setata la 10. 
+   R1 are g0/0/0 setata la half duplex, viteza e setata la 10.
+
+Partea IV:
+
+Documentația va include data la care a fost realizată depanarea, dispozitivele testate, comenzile utilizate împreună cu rezultatele generate de aceste comenzi, problemele identificate și modificările de configurare efectuate pentru a rezolva aceste probleme.
+
+Întrebare de gândit:
+După ce am determinat ca nu era setat gateway-ul implicit, am adăugat și verificat funcționalitatea. După, dacă problemele persistă, se trece la următorul dispozitiv, de exempplu S1. Acest proces continuă, până când funcționalitatea completă a rețelei ar fi atinsă.
+
+
+--> Exercițiul 13.9
+Device     | Interface   | IP Address / Prefix     | Default Gateway
+-----------|-------------|-------------------------|----------------
+R1         | G0/0        | 192.168.0.1 /25         | N/A
+           | G0/0        | 2001:db8:acad::1/64     | N/A
+           | G0/0        | fe80::1                 | N/A
+           | G0/1        | 192.168.0.129 /26       | N/A
+           | G0/1        | 2001:db8:acad:1::1/64   | N/A
+           | G0/1        | fe80::1                 | N/A
+           | G0/2        | 192.168.0.193 /27       | N/A
+           | G0/2        | 2001:db8:acad:2::1/64   | N/A
+           | G0/2        | fe80::1                 | N/A
+           | S0/0/1      | 172.16.1.2 /30          | N/A
+           | S0/0/1      | 2001:db8:2::1/64        | N/A
+           | S0/0/1      | fe80::1                 | N/A
+Central    | S0/0/0      | 209.165.200.226 /30     | N/A
+           | S0/0/0      | 2001:db8:1::1/64        | N/A
+           | S0/0/0      | fe80::2                 | N/A
+           | S0/0/1      | 172.16.1.1 /30          | N/A
+           | S0/0/1      | 2001:db8:2::2/64        | N/A
+           | S0/0/1      | fe80::2                 | N/A
+S1         | VLAN 1      | 192.168.0.2 /25         | 192.168.0.1
+S2         | VLAN 1      | 192.168.0.130 /26       | 192.168.0.129
+S3         | VLAN 1      | 192.168.0.194 /27       | 192.168.0.193
+Staff      | NIC         | 192.168.0.3 /25         | 192.168.0.1
+           | NIC         | 2001:db8:acad::2/64     | fe80::1
+           | NIC         | fe80::2                 | fe80::1
+Sales      | NIC         | 192.168.0.131 /26       | 192.168.0.129
+           | NIC         | 2001:db8:acad:1::2/64   | fe80::1
+           | NIC         | fe80::2                 | fe80::1
+IT         | NIC         | 192.168.0.195 /27       | 192.168.0.193
+           | NIC         | 2001:db8:acad:2::2/64   | fe80::1
+           | NIC         | fe80::2                 | fe80::1
+Web        | NIC         | 64.100.0.3 /29          | 64.100.0.1
+           | NIC         | 2001:db8:cafe::3/64     | fe80::1
+           | NIC         | fe80::2                 | fe80::1
+
+--> Exercițiul 13.10
+Partea II:
+Întrebări de gândit:
+1. show ip route, show interfaces, show protocols.
+2. show ip interface brief.
+3. show interfaces, show ip interface brief, show protocols.
+4. show version.
+5. show arp, show interfaces, show ip route, show ip interface brief, show protocols.
+6. show version, show flash.
+7. show users.
+8. show interfaces.
+9. show ip route.
+10. GigabitEthernet 0/0, Serial 0/0/1.
+
+
+--> Exercițiul 13.10
+Partea II:
+Întrebări de gândit:
+1. show protocols
+2. show ip interface brief
+3. show interfaces, show ip interface brief.
+4. show version.
+5. show arp, show interfaces.
+6. show version, show flash.
+7. show users.
+8. show interfaces.
+9. show ip route.
+10. GigabitEthernet 0/0, Serial 0/0/1.
+
+
